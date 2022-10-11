@@ -1,0 +1,12 @@
+
+[workspace]
+
+members = [
+    "src/systems/b777_systems",
+    "src/systems/b777_systems_wasm",
+    "src/systems/systems",
+    "src/systems/systems_wasm",
+]
+
+[profile.release]
+lto = true

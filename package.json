@@ -1,0 +1,28 @@
+{
+  "name": "b777-salty-fbw",
+  "version": "1.0.0",
+  "description": "This Compatibility Mod built-up project based on [Salty Simulations 747](https://github.com/saltysimulations/salty-747) and [FlyByWire A32NX Project](https://github.com/flybywiresim/a32nx).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WorldlinerRS/b777-salty-fbw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WorldlinerRS/b777-salty-fbw/issues"
+  },
+  "homepage": "https://github.com/WorldlinerRS/b777-salty-fbw#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^9.0.1",
+    "msfssdk": "file:msfs-avionics-mirror/src/sdk/build",
+    "rollup": "^2.79.1",
+    "rollup-plugin-import-css": "^3.0.3",
+    "typescript": "^4.8.4"
+  }
+}
