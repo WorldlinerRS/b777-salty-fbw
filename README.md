@@ -9,4 +9,4 @@ This is an open-source modification for Captain Sim Boeing 777-200ER, Boeing 777
 
 This Compatibility Mod for Captain Sim Boeing 777 Series is a modified version based on [Salty Simulations 747 Project](https://github.com/saltysimulations/salty-747) and [FlyByWire A32NX Project](https://github.com/flybywiresim/a32nx). Therefore is this project also distributed under the GNU General Public License version 3. See [LICENSE](https://github.com/masterrob94/masterrob94-salty-777/blob/master/LICENSE).
 
-Microsoft Flight Simulator © Microsoft Corporation. Salty Compatibility Mod for Captain Sim Boeing 777/767 was created under Microsoft's "Game Content Usage Rules" using assets from Microsoft Flight Simulator, and it is not endorsed by or affiliated with Microsoft.
+Microsoft Flight Simulator © Microsoft Corporation. Compatibility Mod for Captain Sim Boeing 777 Series was created under Microsoft's "Game Content Usage Rules" using assets from Microsoft Flight Simulator, and it is not endorsed by or affiliated with Microsoft.
