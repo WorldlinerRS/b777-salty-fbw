@@ -21,9 +21,11 @@ pub(super) fn flaps(builder: &mut MsfsAspectBuilder) -> Result<(), Box<dyn Error
     )?;
     flaps_event_to_value(builder, "FLAPS_UP", 0.)?;
     flaps_event_to_value(builder, "FLAPS_1", 1.)?;
-    flaps_event_to_value(builder, "FLAPS_2", 2.)?;
-    flaps_event_to_value(builder, "FLAPS_3", 3.)?;
-    flaps_event_to_value(builder, "FLAPS_DOWN", 4.)?;
+    flaps_event_to_value(builder, "FLAPS_5", 2.)?;
+    flaps_event_to_value(builder, "FLAPS_15", 3.)?;
+    flaps_event_to_value(builder, "FLAPS_20", 4.)?;
+    flaps_event_to_value(builder, "FLAPS_25", 5.)?;
+    flaps_event_to_value(builder, "FLAPS_30", 6.)?;
     builder.event_to_variable(
         "FLAPS_SET",
         EventToVariableMapping::EventDataAndCurrentValueToValue(|event_data, current_value| {
@@ -79,16 +81,20 @@ fn flaps_event_to_value(
 }
 
 fn get_handle_pos_from_0_1(input: f64, current_value: f64) -> f64 {
-    if input < -0.8 {
+    if input < -0.87 {
         0.
-    } else if input > -0.7 && input < -0.3 {
+    } else if input > -0.74 && input < -0.61 {
         1.
-    } else if input > -0.2 && input < 0.2 {
+    } else if input > -0.48 && input < -0.2 {
         2.
-    } else if input > 0.3 && input < 0.7 {
+    } else if input > -0.04 && input < 0.12 {
         3.
-    } else if input > 0.8 {
+    } else if input > 0.28 && input < 0.44 {
         4.
+    } else if input > 0.6 && input < 0.76 {
+        5.
+    } else if input > 0.84 {
+        6.
     } else {
         current_value
     }

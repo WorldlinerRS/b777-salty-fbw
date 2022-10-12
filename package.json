@@ -23,6 +23,7 @@
     "msfssdk": "file:msfs-avionics-mirror/src/sdk/build",
     "rollup": "^2.79.1",
     "rollup-plugin-import-css": "^3.0.3",
+    "safe-stable-stringify": "^2.4.0",
     "typescript": "^4.8.4"
   }
 }
