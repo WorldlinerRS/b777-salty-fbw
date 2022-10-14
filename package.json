@@ -1,10 +1,20 @@
 {
   "name": "b777-salty-fbw",
-  "version": "1.0.0",
+  "version": "3.0.0",
+  "edition": "development",
   "description": "This Compatibility Mod built-up project based on [Salty Simulations 747](https://github.com/saltysimulations/salty-747) and [FlyByWire A32NX Project](https://github.com/flybywiresim/a32nx).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --cache **/*.{js,mjs,jsx,ts,tsx}",
+    "lint-fix": "npm run lint -- --fix",
+    "test": "jest",
+    "build:ace": "node --max-old-space-size=8192 node_modules/rollup/dist/bin/rollup -wc ./src/instruments/buildSrc/aceBuild.mjs",
+    "build:aims": "rollup -c src/aims/rollup.config.js",
+    "build:behavior": "cd src/behavior && node ./build.js"
+  },
+  "lint-staged": {
+    "*.{js,mjs,jsx}": "eslint --cache --fix",
+    "*.{json,yml,css,scss}": "prettier --write"
   },
   "repository": {
     "type": "git",
@@ -18,12 +28,43 @@
   },
   "homepage": "https://github.com/WorldlinerRS/b777-salty-fbw#readme",
   "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.19.1",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@flybywiresim/rnp": "^2.1.0",
+    "@rollup/plugin-babel": "^6.0.0",
+    "@rollup/plugin-commonjs": "^23.0.0",
+    "@rollup/plugin-image": "^3.0.0",
+    "@rollup/plugin-json": "^5.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-replace": "^5.0.0",
     "@rollup/plugin-typescript": "^9.0.1",
+    "@types/jest": "^29.1.2",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.25.0",
+    "jsdom": "^20.0.1",
     "msfssdk": "file:msfs-avionics-mirror/src/sdk/build",
+    "postcss-color-functional-notation": "^4.2.4",
     "rollup": "^2.79.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-import-css": "^3.0.3",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-serve": "^2.0.1",
+    "rollup-plugin-typescript-paths": "^1.4.0",
+    "rollup-plugin-typescript2": "^0.34.1",
     "safe-stable-stringify": "^2.4.0",
+    "tailwindcss": "^3.1.8",
     "typescript": "^4.8.4"
   }
 }

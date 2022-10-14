@@ -1,0 +1,4 @@
+<ModelBehaviors>
+    <Include RelativeFile="../generated/B77RS_Interior_CDU.xml"/>
+    <Include RelativeFile="../generated/B77RS_Interior_Glareshield.xml"/>
+</ModelBehaviors>

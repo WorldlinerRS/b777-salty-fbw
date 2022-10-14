@@ -1014,7 +1014,7 @@
     <Include ModelBehaviorFile="Asobo\Airliner\FMC.xml"/>
     <Include ModelBehaviorFile="Asobo\Exterior.xml"/>
     <Include ModelBehaviorFile="ASOBO\Inputs\Helpers.xml"/>
-    <Include ModelBehaviorFile="RobSim\index.xml"/>
+    <Include ModelBehaviorFile="B77RS\Interior\B77RS_Interior_Includes.xml"/>
 
 
     <Component ID="INTERACTIVE_POINTS">
@@ -2503,7 +2503,7 @@
           <DONT_OVERRIDE_BASE_EMISSIVE>True</DONT_OVERRIDE_BASE_EMISSIVE>
           <ANIM_CODE>66</ANIM_CODE>
         </UseTemplate>
-        <!-- 
+        <!--
 				ovhd_push_elt
 				ovhd_switch_elt
 			-->
@@ -2688,7 +2688,7 @@
           <ANIM_NAME>ovhd_knob_air_data_center</ANIM_NAME>
           <ANIM_CODE>50</ANIM_CODE>
         </UseTemplate>
-        <!-- 						
+        <!--
 				ovhd_switch_pressurization_outflow_valves
 			-->
       </Component>
@@ -2749,14 +2749,14 @@
         </DefaultTemplateParameters>
 
         <Component ID="GlassCockpit_Panel_Pilot">
-          <UseTemplate Name="RobSim_AIRLINER_Knob_ND_Template">
+          <UseTemplate Name="B77RS_AIRLINER_Knob_ND_Template">
             <TYPE>BOEING_777</TYPE>
             <NODE_ID>knob_afds_ctr_l1</NODE_ID>
             <ANIM_NAME>afds_knob_ctr_l</ANIM_NAME>
             <BUTTON_NODE_ID>btn_afds_ctr_l</BUTTON_NODE_ID>
             <BUTTON_ANIM_NAME>afds_push_ctr_l</BUTTON_ANIM_NAME>
           </UseTemplate>
-          <UseTemplate Name="RobSim_AIRLINER_Knob_ND_Range_Template">
+          <UseTemplate Name="B77RS_AIRLINER_Knob_ND_Range_Template">
             <TYPE>BOEING_777</TYPE>
             <NODE_ID>knob_afds_tfc_l1</NODE_ID>
             <ANIM_NAME>afds_knob_tfc_l</ANIM_NAME>
@@ -2769,7 +2769,7 @@
             <BUTTON_NODE_ID>btn_afds_std_l1</BUTTON_NODE_ID>
             <BUTTON_ANIM_NAME>afds_push_std_l1</BUTTON_ANIM_NAME>
           </UseTemplate>
-          <UseTemplate Name="RobSim_AUTOPILOT_Knob_Baro_Template">
+          <UseTemplate Name="B77RS_AUTOPILOT_Knob_Baro_Template">
             <NODE_ID>knob_afds_std_l2</NODE_ID>
             <ANIM_NAME_KNOB>afds_knob_std_l2</ANIM_NAME_KNOB>
             <ANIM_NAME_PUSH>afds_push_std_l</ANIM_NAME_PUSH>
@@ -2842,7 +2842,7 @@
         </Component>
 
         <Component ID="GlassCockpit_Panel_CoPilot">
-          <UseTemplate Name="RobSim_AIRLINER_Knob_ND_Template">
+          <UseTemplate Name="B77RS_AIRLINER_Knob_ND_Template">
             <TYPE>BOEING_777</TYPE>
             <ID>2</ID>
             <NODE_ID>knob_afds_ctr_r</NODE_ID>
@@ -2850,7 +2850,7 @@
             <BUTTON_NODE_ID>btn_afds_ctr_r</BUTTON_NODE_ID>
             <BUTTON_ANIM_NAME>afds_push_ctr_r</BUTTON_ANIM_NAME>
           </UseTemplate>
-          <UseTemplate Name="RobSim_AIRLINER_Knob_ND_Range_Template">
+          <UseTemplate Name="B77RS_AIRLINER_Knob_ND_Range_Template">
             <TYPE>BOEING_777</TYPE>
             <ID>2</ID>
             <NODE_ID>knob_afds_tfc_r</NODE_ID>
@@ -2864,38 +2864,38 @@
             <BUTTON_NODE_ID>btn_afds_tfc_r</BUTTON_NODE_ID>
             <BUTTON_ANIM_NAME>afds_push_tfc_r</BUTTON_ANIM_NAME>
           </UseTemplate>
-          <UseTemplate Name="RobSim_AUTOPILOT_Knob_Baro_Template">
+          <UseTemplate Name="B77RS_AUTOPILOT_Knob_Baro_Template">
             <NODE_ID>knob_afds_std_r2</NODE_ID>
             <ANIM_NAME_KNOB>afds_knob_std_r2</ANIM_NAME_KNOB>
             <ANIM_NAME_PUSH>afds_push_std_r</ANIM_NAME_PUSH>
             <AIRLINER_TYPE>PUSH</AIRLINER_TYPE>
             <ID>2</ID>
           </UseTemplate>
-          <UseTemplate Name="RobSim_BOEING_Push_WXR_Template">
+          <UseTemplate Name="B77RS_BOEING_Push_WXR_Template">
             <NODE_ID>btn_afds_wxr_r</NODE_ID>
             <ANIM_NAME>afds_push_wxr_r</ANIM_NAME>
           </UseTemplate>
-          <UseTemplate Name="RobSim_BOEING_Push_STA_Template">
+          <UseTemplate Name="B77RS_BOEING_Push_STA_Template">
             <NODE_ID>btn_afds_sta_r</NODE_ID>
             <ANIM_NAME>afds_push_sta_r</ANIM_NAME>
           </UseTemplate>
-          <UseTemplate Name="RobSim_BOEING_Push_WPT_Template">
+          <UseTemplate Name="B77RS_BOEING_Push_WPT_Template">
             <NODE_ID>btn_afds_wpt_r</NODE_ID>
             <ANIM_NAME>afds_push_wpt_r</ANIM_NAME>
           </UseTemplate>
-          <UseTemplate Name="RobSim_BOEING_Push_ARPT_Template">
+          <UseTemplate Name="B77RS_BOEING_Push_ARPT_Template">
             <NODE_ID>btn_afds_arpt_r</NODE_ID>
             <ANIM_NAME>afds_push_arpt_r</ANIM_NAME>
           </UseTemplate>
-          <UseTemplate Name="RobSim_BOEING_Push_DATA_Template">
+          <UseTemplate Name="B77RS_BOEING_Push_DATA_Template">
             <NODE_ID>btn_afds_data_r</NODE_ID>
             <ANIM_NAME>afds_push_data_r</ANIM_NAME>
           </UseTemplate>
-          <UseTemplate Name="RobSim_BOEING_Push_POS_Template">
+          <UseTemplate Name="B77RS_BOEING_Push_POS_Template">
             <NODE_ID>btn_afds_pos_r</NODE_ID>
             <ANIM_NAME>afds_push_pos_r</ANIM_NAME>
           </UseTemplate>
-          <UseTemplate Name="RobSim_BOEING_Push_TERR_Template">
+          <UseTemplate Name="B77RS_BOEING_Push_TERR_Template">
             <NODE_ID>btn_afds_terr_r</NODE_ID>
             <ANIM_NAME>afds_push_terr_r</ANIM_NAME>
           </UseTemplate>
@@ -2965,7 +2965,7 @@
           <TYPE>ONLY_IF_DISCONNECTED</TYPE>
           <ALL_AP_ON_APPR>True</ALL_AP_ON_APPR>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Push_Approach_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Push_Approach_Template">
           <NODE_ID>btn_autopilot_app</NODE_ID>
           <ANIM_NAME>autopilot_push_app</ANIM_NAME>
           <EMISSIVE_NODE_ID>btn_autopilot_app</EMISSIVE_NODE_ID>
@@ -2984,7 +2984,7 @@
           <AP_COUNT>2</AP_COUNT>
           <INVERT_SWITCH_ON_CONDITION>True</INVERT_SWITCH_ON_CONDITION>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Push_FlightLevelChange_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Push_FlightLevelChange_Template">
           <NODE_ID>btn_autopilot_flch</NODE_ID>
           <ANIM_NAME>autopilot_push_flch</ANIM_NAME>
           <EMISSIVE_NODE_ID>btn_autopilot_flch</EMISSIVE_NODE_ID>
@@ -2993,7 +2993,7 @@
           <AUTOPILOT_PUSH_BUTTON_OFF>autopilot_largepush_button_off</AUTOPILOT_PUSH_BUTTON_OFF>
           <TYPE>B777</TYPE>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Push_Altitude_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Push_Altitude_Template">
           <NODE_ID>btn_autopilot_hold</NODE_ID>
           <ANIM_NAME>autopilot_push_hold</ANIM_NAME>
           <EMISSIVE_NODE_ID>btn_autopilot_hold</EMISSIVE_NODE_ID>
@@ -3002,7 +3002,7 @@
           <AUTOPILOT_PUSH_BUTTON_OFF>autopilot_largepush_button_off</AUTOPILOT_PUSH_BUTTON_OFF>
           <TYPE>B777</TYPE>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Push_Heading_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Push_Heading_Template">
           <NODE_ID>btn_autopilot_hdg</NODE_ID>
           <ANIM_NAME>autopilot_push_hdg</ANIM_NAME>
           <EMISSIVE_NODE_ID>btn_autopilot_hdg</EMISSIVE_NODE_ID>
@@ -3011,7 +3011,7 @@
           <AUTOPILOT_PUSH_BUTTON_OFF>autopilot_largepush_button_off</AUTOPILOT_PUSH_BUTTON_OFF>
           <TYPE>B777</TYPE>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Push_Navigation_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Push_Navigation_Template">
           <NODE_ID>btn_autopilot_lnav</NODE_ID>
           <ANIM_NAME>autopilot_push_lnav</ANIM_NAME>
           <EMISSIVE_NODE_ID>btn_autopilot_lnav</EMISSIVE_NODE_ID>
@@ -3021,7 +3021,7 @@
           <TOOLTIPID>%((A:AUTOPILOT NAV1 LOCK, bool))%{if}TT:COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_LNAV_ON%{else}TT:COCKPIT.TOOLTIPS.AUTOPILOT_PANEL_LNAV_OFF%{end}</TOOLTIPID>
           <TYPE>B777</TYPE>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Push_Vertical_Navigation_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Push_Vertical_Navigation_Template">
           <NODE_ID>btn_autopilot_vnav</NODE_ID>
           <ANIM_NAME>autopilot_push_vnav</ANIM_NAME>
           <EMISSIVE_NODE_ID>btn_autopilot_vnav</EMISSIVE_NODE_ID>
@@ -3030,7 +3030,7 @@
           <AUTOPILOT_PUSH_BUTTON_OFF>autopilot_largepush_button_off</AUTOPILOT_PUSH_BUTTON_OFF>
           <TYPE>B777</TYPE>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Push_Localizer_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Push_Localizer_Template">
           <NODE_ID>btn_autopilot_loc</NODE_ID>
           <ANIM_NAME>autopilot_push_loc</ANIM_NAME>
           <EMISSIVE_NODE_ID>btn_autopilot_loc</EMISSIVE_NODE_ID>
@@ -3038,7 +3038,7 @@
           <AUTOPILOT_PUSH_BUTTON_ON>autopilot_largepush_button_on</AUTOPILOT_PUSH_BUTTON_ON>
           <AUTOPILOT_PUSH_BUTTON_OFF>autopilot_largepush_button_off</AUTOPILOT_PUSH_BUTTON_OFF>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Push_Speed_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Push_Speed_Template">
           <NODE_ID>btn_autopilot_spd</NODE_ID>
           <ANIM_NAME>autopilot_push_spd</ANIM_NAME>
           <EMISSIVE_NODE_ID>btn_autopilot_spd</EMISSIVE_NODE_ID>
@@ -3056,7 +3056,7 @@
           <AUTOPILOT_PUSH_BUTTON_ON>autopilot_largepush_button_on</AUTOPILOT_PUSH_BUTTON_ON>
           <AUTOPILOT_PUSH_BUTTON_OFF>autopilot_largepush_button_off</AUTOPILOT_PUSH_BUTTON_OFF>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Push_VerticalSpeed_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Push_VerticalSpeed_Template">
           <NODE_ID>btn_autopilot_vs</NODE_ID>
           <ANIM_NAME>autopilot_push_vs</ANIM_NAME>
           <EMISSIVE_NODE_ID>btn_autopilot_vs</EMISSIVE_NODE_ID>
@@ -3065,13 +3065,13 @@
           <AUTOPILOT_PUSH_BUTTON_OFF>autopilot_largepush_button_off</AUTOPILOT_PUSH_BUTTON_OFF>
           <TYPE>B777</TYPE>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Knob_Altitude_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Knob_Altitude_Template">
           <NODE_ID>knob_autopilot_alt</NODE_ID>
           <ANIM_NAME_KNOB>autopilot_knob_alt</ANIM_NAME_KNOB>
           <ANIM_NAME_PUSH>knob_autopilot_alt_push</ANIM_NAME_PUSH>
           <TYPE>B777</TYPE>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Knob_Heading_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Knob_Heading_Template">
           <NODE_ID>knob_autopilot_heading</NODE_ID>
           <ANIM_NAME_KNOB>autopilot_knob_heading</ANIM_NAME_KNOB>
           <ANIM_NAME_PUSH>autopilot_push_hdg_sel</ANIM_NAME_PUSH>
@@ -3083,25 +3083,25 @@
           <SETTINGS_COUNT>5</SETTINGS_COUNT>
           <COUNT>5</COUNT>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Push_SpeedToggle_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Push_SpeedToggle_Template">
           <NODE_ID>btn_autopilot_sel</NODE_ID>
           <ANIM_NAME>autopilot_push_sel</ANIM_NAME>
           <NO_TEXT_EMISSIVE>True</NO_TEXT_EMISSIVE>
           <NO_INDICATOR>True</NO_INDICATOR>
           <TYPE>B777</TYPE>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Knob_SpeedMach_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Knob_SpeedMach_Template">
           <NODE_ID>knob_autopilot_speed</NODE_ID>
           <ANIM_NAME>autopilot_knob_speed</ANIM_NAME>
           <ANIM_NAME_PUSH>knob_autopilot_speed_push</ANIM_NAME_PUSH>
           <TYPE>B777</TYPE>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Push_AutoThrottle_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Push_AutoThrottle_Template">
           <NODE_ID>switch_autopilot_at_arm</NODE_ID>
           <ANIM_NAME>autopilot_switch_at_arm</ANIM_NAME>
           <TYPE>B777</TYPE>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Push_FlightDirector_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Push_FlightDirector_Template">
           <NODE_ID>switch_autopilot_fd_l</NODE_ID>
           <ANIM_NAME>autopilot_switch_fd_l</ANIM_NAME>
           <TOGGLEABLE/>
@@ -3109,7 +3109,7 @@
           <NO_TEXT_EMISSIVE>True</NO_TEXT_EMISSIVE>
           <ID>1</ID>
         </UseTemplate>
-        <UseTemplate Name="RobSim_AUTOPILOT_Push_FlightDirector_Template">
+        <UseTemplate Name="B77RS_AUTOPILOT_Push_FlightDirector_Template">
           <NODE_ID>switch_autopilot_fd_r</NODE_ID>
           <ANIM_NAME>autopilot_switch_fd_r</ANIM_NAME>
           <TOGGLEABLE/>
@@ -3185,14 +3185,14 @@
       </Component>
       <Component ID="EICAS">
         <!-- TODO - Glasscockpit ? -->
-        <!-- EICAS 
+        <!-- EICAS
 				eicas_push_canc_rcl
 				eicas_master_knob_eiu_sel
 				eicas_master_knob_fmc_master
 				eicas_master_switch_hdg_ref
 				eicas_knob_master_fmc_master
 				-->
-        <UseTemplate Name="RobSim_EICAS_PAGE_SELECTION_Template_Boeing">
+        <UseTemplate Name="B77RS_EICAS_PAGE_SELECTION_Template_Boeing">
           <PANEL_NAME>B777_EICAS_2</PANEL_NAME>
         </UseTemplate>
       </Component>
