@@ -127,7 +127,7 @@ struct ZoneAir {
 }
 
 impl ZoneAir {
-    const A320_CABIN_DIAMETER_METER: f64 = 4.14; // m
+    const B777_CABIN_DIAMETER_METER: f64 = 5.84; // m
     const FLOW_RATE_THROUGH_OPEN_DOOR_KG_PER_SECOND: f64 = 0.6; // kg/s
     const CONVECTION_COEFFICIENT_CONSTANT_FOR_NATURAL_CONVECTION: f64 = 1.32;
     const FIBER_GLASS_BLANKET_THERMAL_CONDUCTIVITY: f64 = 25.; // m*W/m*C
@@ -268,7 +268,7 @@ impl ZoneAir {
         // Convection coefficient for horizontal cylinder in air
         let convection_coefficient: f64 =
             Self::CONVECTION_COEFFICIENT_CONSTANT_FOR_NATURAL_CONVECTION
-                * (temperature_differential.abs() / Self::A320_CABIN_DIAMETER_METER).powf(1. / 4.);
+                * (temperature_differential.abs() / Self::B777_CABIN_DIAMETER_METER).powf(1. / 4.);
         convection_coefficient
     }
 
@@ -311,7 +311,7 @@ impl ZoneAir {
 
     fn characteristic_length_calculation(&self, zone_volume: Volume) -> Length {
         let characteristic_length: f64 = zone_volume.get::<cubic_meter>()
-            / (std::f64::consts::PI * (Self::A320_CABIN_DIAMETER_METER / 2.).powf(2.));
+            / (std::f64::consts::PI * (Self::B777_CABIN_DIAMETER_METER / 2.).powf(2.));
         Length::new::<meter>(characteristic_length)
     }
 

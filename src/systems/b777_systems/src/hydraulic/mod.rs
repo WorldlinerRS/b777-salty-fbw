@@ -5550,7 +5550,7 @@ mod tests {
                 test::TestElectricitySource, ElectricalBus, Electricity, ElectricitySource,
                 ExternalPowerSource,
             },
-            engine::{leap_engine::LeapEngine, EngineFireOverheadPanel},
+            engine::{ge90_engine::GE90Engine, EngineFireOverheadPanel},
             failures::FailureType,
             hydraulic::electrical_generator::TestGenerator,
             landing_gear::{GearSystemState, LandingGear, LandingGearControlInterfaceUnitSet},
@@ -5698,8 +5698,8 @@ mod tests {
         }
         struct B777HydraulicsTestAircraft {
             pneumatics: B777TestPneumatics,
-            engine_1: LeapEngine,
-            engine_2: LeapEngine,
+            engine_1: GE90Engine,
+            engine_2: GE90Engine,
             hydraulics: B777Hydraulic,
             overhead: B777HydraulicOverheadPanel,
             autobrake_panel: AutobrakePanel,
@@ -5737,8 +5737,8 @@ mod tests {
             fn new(context: &mut InitContext) -> Self {
                 Self {
                     pneumatics: B777TestPneumatics::new(),
-                    engine_1: LeapEngine::new(context, 1),
-                    engine_2: LeapEngine::new(context, 2),
+                    engine_1: GE90Engine::new(context, 1),
+                    engine_2: GE90Engine::new(context, 2),
                     hydraulics: B777Hydraulic::new(context),
                     overhead: B777HydraulicOverheadPanel::new(context),
                     autobrake_panel: AutobrakePanel::new(context),

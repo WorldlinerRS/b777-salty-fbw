@@ -42,31 +42,31 @@ pub(super) fn autobrakes(builder: &mut MsfsAspectBuilder) -> Result<(), Box<dyn 
     };
 
     builder.event_to_variable(
-        "A32NX.AUTOBRAKE_SET",
+        "B77RS.AUTOBRAKE_SET",
         EventToVariableMapping::EventDataToValue(|event_data| event_data as f64),
         Variable::named("AUTOBRAKES_ARMED_MODE_SET"),
         options_set,
     )?;
     builder.event_to_variable(
-        "A32NX.AUTOBRAKE_SET_DISARM",
+        "B77RS.AUTOBRAKE_SET_DISARM",
         EventToVariableMapping::Value(0.),
         Variable::named("AUTOBRAKES_ARMED_MODE_SET"),
         options_set,
     )?;
     builder.event_to_variable(
-        "A32NX.AUTOBRAKE_SET_LO",
+        "B77RS.AUTOBRAKE_SET_LO",
         EventToVariableMapping::Value(1.),
         Variable::named("AUTOBRAKES_ARMED_MODE_SET"),
         options_set,
     )?;
     builder.event_to_variable(
-        "A32NX.AUTOBRAKE_SET_MED",
+        "B77RS.AUTOBRAKE_SET_MED",
         EventToVariableMapping::Value(2.),
         Variable::named("AUTOBRAKES_ARMED_MODE_SET"),
         options_set,
     )?;
     builder.event_to_variable(
-        "A32NX.AUTOBRAKE_SET_MAX",
+        "B77RS.AUTOBRAKE_SET_MAX",
         EventToVariableMapping::Value(3.),
         Variable::named("AUTOBRAKES_ARMED_MODE_SET"),
         options_set,
@@ -79,19 +79,19 @@ pub(super) fn autobrakes(builder: &mut MsfsAspectBuilder) -> Result<(), Box<dyn 
     };
 
     builder.event_to_variable(
-        "A32NX.AUTOBRAKE_BUTTON_LO",
+        "B77RS.AUTOBRAKE_BUTTON_LO",
         EventToVariableMapping::Value(1.),
         Variable::named("OVHD_AUTOBRK_LOW_ON_IS_PRESSED"),
         options_buttons,
     )?;
     builder.event_to_variable(
-        "A32NX.AUTOBRAKE_BUTTON_MED",
+        "B77RS.AUTOBRAKE_BUTTON_MED",
         EventToVariableMapping::Value(1.),
         Variable::named("OVHD_AUTOBRK_MED_ON_IS_PRESSED"),
         options_buttons,
     )?;
     builder.event_to_variable(
-        "A32NX.AUTOBRAKE_BUTTON_MAX",
+        "B77RS.AUTOBRAKE_BUTTON_MAX",
         EventToVariableMapping::Value(1.),
         Variable::named("OVHD_AUTOBRK_MAX_ON_IS_PRESSED"),
         options_buttons,

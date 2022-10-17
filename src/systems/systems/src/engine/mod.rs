@@ -7,7 +7,7 @@ use crate::{
     simulation::{SimulationElement, SimulationElementVisitor},
 };
 
-pub mod leap_engine;
+pub mod ge90_engine;
 
 pub trait Engine: EngineCorrectedN2 + EngineUncorrectedN2 + EngineCorrectedN1 {
     fn hydraulic_pump_output_speed(&self) -> AngularVelocity;

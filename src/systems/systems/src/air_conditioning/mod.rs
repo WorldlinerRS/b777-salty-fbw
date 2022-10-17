@@ -49,7 +49,7 @@ impl ZoneType {
     }
 }
 
-// TODO: At the moment this lives here but it's specific to the A320.
+// TODO: At the moment this lives here but it's specific to the A320 (Apply to B777).
 impl Display for ZoneType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -57,7 +57,7 @@ impl Display for ZoneType {
             ZoneType::Cabin(number) => match number {
                 1 => write!(f, "FWD"),
                 2 => write!(f, "AFT"),
-                _ => panic!("Not implemented for the A320 aircraft."),
+                _ => panic!("Not implemented for the B777 aircraft."),
             },
         }
     }
