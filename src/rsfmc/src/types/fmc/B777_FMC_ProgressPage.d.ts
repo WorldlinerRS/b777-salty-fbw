@@ -1,0 +1,6 @@
+import { B777_FMC } from "./B777_FMC";
+export declare class B777_FMC_ProgressPage {
+    static _timer: number;
+    static ShowPage1(fmc: B777_FMC): void;
+    static computeEtaToWaypoint(distance: any, groundSpeed: any): number;
+}
