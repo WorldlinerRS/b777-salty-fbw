@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('src/hdsdk/Repositories/SpeedRepository'), require('src/hdsdk/Managers/SpeedManager')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'src/hdsdk/Repositories/SpeedRepository', 'src/hdsdk/Managers/SpeedManager'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.Fmgc = {}, global.SpeedRepository, global.SpeedManager));
-})(this, (function (exports, SpeedRepository, SpeedManager) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.fmc = {}));
+})(this, (function (exports) { 'use strict';
 
   function _defineProperty(obj, key, value) {
     if (key in obj) {
@@ -194,7 +194,7 @@
       return this.search(_key, _printLog);
     }
   }
-  _defineProperty(HeavyDataStorage, "storagePrefix", 'HEAVY_B78XH_');
+  _defineProperty(HeavyDataStorage, "storagePrefix", 'B77RS_');
 
   class SimBriefCredentials {
     /**
@@ -4146,6 +4146,325 @@
   }
   _defineProperty(B777_FMC_IdentPage, "_updateCounter", 0);
 
+  class SpeedRepository {
+    constructor() {
+      _defineProperty(this, "_v1Speed", void 0);
+      _defineProperty(this, "_vRSpeed", void 0);
+      _defineProperty(this, "_v2Speed", void 0);
+      _defineProperty(this, "_isV1SpeedCustom", false);
+      _defineProperty(this, "_isVRSpeedCustom", false);
+      _defineProperty(this, "_isV2SpeedCustom", false);
+      _defineProperty(this, "_overridenSlatApproachSpeed", void 0);
+      _defineProperty(this, "_overridenFlapApproachSpeed", void 0);
+    }
+    get v1Speed() {
+      return this._v1Speed;
+    }
+    set v1Speed(speed) {
+      this._v1Speed = speed;
+    }
+    get vRSpeed() {
+      return this._vRSpeed;
+    }
+    set vRSpeed(speed) {
+      this._vRSpeed = speed;
+    }
+    get v2Speed() {
+      return this._v2Speed;
+    }
+    set v2Speed(speed) {
+      this._v2Speed = speed;
+    }
+    get isV2SpeedCustom() {
+      return this._isV2SpeedCustom;
+    }
+    set isV2SpeedCustom(value) {
+      this._isV2SpeedCustom = value;
+    }
+    get isVRSpeedCustom() {
+      return this._isVRSpeedCustom;
+    }
+    set isVRSpeedCustom(value) {
+      this._isVRSpeedCustom = value;
+    }
+    get isV1SpeedCustom() {
+      return this._isV1SpeedCustom;
+    }
+    set isV1SpeedCustom(value) {
+      this._isV1SpeedCustom = value;
+    }
+    get overridenSlatApproachSpeed() {
+      return this._overridenSlatApproachSpeed;
+    }
+    set overridenSlatApproachSpeed(value) {
+      this._overridenSlatApproachSpeed = value;
+    }
+    get overridenFlapApproachSpeed() {
+      return this._overridenFlapApproachSpeed;
+    }
+    set overridenFlapApproachSpeed(value) {
+      this._overridenFlapApproachSpeed = value;
+    }
+  }
+
+  let VSpeedType;
+  (function (VSpeedType) {
+    VSpeedType[VSpeedType["v1"] = 0] = "v1";
+    VSpeedType[VSpeedType["vR"] = 1] = "vR";
+    VSpeedType[VSpeedType["v2"] = 2] = "v2";
+  })(VSpeedType || (VSpeedType = {}));
+
+  class SpeedManager {
+    /**
+     * TODO: Should be this here???
+     * @type {boolean}
+     * @private
+     */
+
+    /**
+     * TODO: Move to some kind of state class??
+     * @type {boolean}
+     * @private
+     */
+
+    constructor(repository, calculator) {
+      _defineProperty(this, "_speedRepository", void 0);
+      _defineProperty(this, "_speedCalculator", void 0);
+      _defineProperty(this, "overSpeedLimitThreshold", false);
+      _defineProperty(this, "_climbSpeedTransitionDeleted", false);
+      this._speedRepository = repository;
+      this._speedCalculator = calculator;
+    }
+    get calculator() {
+      return this._speedCalculator;
+    }
+    get repository() {
+      return this._speedRepository;
+    }
+    clearVSpeeds() {
+      this.setV1Speed(0, true);
+      this.setVRSpeed(0, true);
+      this.setV2Speed(0, true);
+    }
+    setV1Speed(speed) {
+      let computed = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      this._speedRepository.v1Speed = speed;
+      this._speedRepository.isV1SpeedCustom = !computed;
+      SimVar.SetSimVarValue('L:AIRLINER_V1_SPEED', 'Knots', speed).catch(console.error);
+    }
+    setVRSpeed(speed) {
+      let computed = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      this._speedRepository.vRSpeed = speed;
+      this._speedRepository.isVRSpeedCustom = !computed;
+      SimVar.SetSimVarValue('L:AIRLINER_VR_SPEED', 'Knots', speed).catch(console.error);
+    }
+    setV2Speed(speed) {
+      let computed = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      this._speedRepository.v2Speed = speed;
+      this._speedRepository.isV2SpeedCustom = !computed;
+      SimVar.SetSimVarValue('L:AIRLINER_V2_SPEED', 'Knots', speed).catch(console.error);
+    }
+    getComputedV1Speed(runway, weight, flaps) {
+      return SpeedManager.getComputedVSpeed(runway, weight, flaps, VSpeedType.v1);
+    }
+    getComputedVRSpeed(runway, weight, flaps) {
+      return SpeedManager.getComputedVSpeed(runway, weight, flaps, VSpeedType.vR);
+    }
+    getComputedV2Speed(runway, weight, flaps) {
+      return SpeedManager.getComputedVSpeed(runway, weight, flaps, VSpeedType.v2);
+    }
+    static getComputedVSpeed(runway, weight, flaps, type) {
+      let runwayCoefficient = SpeedManager._getRunwayCoefficient(runway);
+      let dWeightCoefficient = SpeedManager._getWeightCoefficient(weight, type);
+      const flapsCoefficient = SpeedManager._getFlapsCoefficient(flaps);
+      let temp = SimVar.GetSimVarValue('AMBIENT TEMPERATURE', 'celsius');
+      let index = SpeedManager._getIndexFromTemp(temp);
+      let min;
+      let max;
+      switch (type) {
+        case VSpeedType.v1:
+          min = SpeedManager._v1s[index][0];
+          max = SpeedManager._v1s[index][1];
+          break;
+        case VSpeedType.vR:
+          min = SpeedManager._vRs[index][0];
+          max = SpeedManager._vRs[index][1];
+          break;
+        case VSpeedType.v2:
+          min = SpeedManager._v2s[index][0];
+          max = SpeedManager._v2s[index][1];
+          break;
+      }
+      let speed = min * (1 - runwayCoefficient) + max * runwayCoefficient;
+      speed *= dWeightCoefficient;
+      speed -= flapsCoefficient;
+      speed = Math.round(speed);
+      return speed;
+    }
+    getVLS(weight) {
+      let flapsHandleIndex = Simplane.getFlapsHandleIndex();
+      if (flapsHandleIndex === 4) {
+        let dWeight = (weight - 61.4) / (82.5 - 61.4);
+        return 141 + 20 * dWeight;
+      } else {
+        let dWeight = (weight - 61.4) / (82.5 - 61.4);
+        return 146 + 21 * dWeight;
+      }
+    }
+    getCleanApproachSpeed() {
+      let weight = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+      return this._speedCalculator.cleanApproachSpeed(weight);
+    }
+    getSlatApproachSpeed() {
+      let weight = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+      if (this.repository.overridenSlatApproachSpeed) {
+        return this.repository.overridenSlatApproachSpeed;
+      }
+      return this.calculator.getSlatApproachSpeed(weight);
+    }
+    getFlapApproachSpeed() {
+      let weight = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+      if (this.repository.overridenFlapApproachSpeed) {
+        return this.repository.overridenFlapApproachSpeed;
+      }
+      return this.calculator.getFlapApproachSpeed(weight);
+    }
+    getManagedApproachSpeed() {
+      let flapsHandleIndex = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : NaN;
+      return this.getVRef(flapsHandleIndex) - 5;
+    }
+    getVRef() {
+      let flapsHandleIndex = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : NaN;
+      return this.calculator.getVRef(flapsHandleIndex);
+    }
+    getClbManagedSpeed(costIndexCoefficient) {
+      const result = this.calculator.getClbManagedSpeed(costIndexCoefficient, this.overSpeedLimitThreshold);
+      this.overSpeedLimitThreshold = result.overSpeedLimitThreshold;
+      if (!this._climbSpeedTransitionDeleted) {
+        result.speed = Math.min(result.speed, 250);
+      }
+      return result.speed;
+    }
+    getEconClbManagedSpeed(costIndexCoefficient) {
+      return this.getEconCrzManagedSpeed(costIndexCoefficient);
+    }
+    getEconCrzManagedSpeed(costIndexCoefficient) {
+      return this.getCrzManagedSpeed(costIndexCoefficient, true);
+    }
+    getCrzManagedSpeed(costIndexCoefficient) {
+      let highAltitude = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      const result = this.calculator.getCrzManagedSpeed(costIndexCoefficient, this.overSpeedLimitThreshold, highAltitude);
+      this.overSpeedLimitThreshold = result.overSpeedLimitThreshold;
+      return result.speed;
+    }
+    getDesManagedSpeed(costIndexCoefficient) {
+      const result = this.calculator.getDesManagedSpeed(costIndexCoefficient, this.overSpeedLimitThreshold);
+      this.overSpeedLimitThreshold = result.overSpeedLimitThreshold;
+      return result.speed;
+    }
+    static _getRunwayCoefficient(runway) {
+      if (runway) {
+        let f = (runway.length - 2250) / (3250 - 2250);
+        return Utils.Clamp(f, 0.0, 1.0);
+      } else {
+        return 1.0;
+      }
+    }
+    static _getWeightCoefficient(weight, type) {
+      let dWeightCoeff = (weight - 350) / (560 - 350);
+      dWeightCoeff = Utils.Clamp(dWeightCoeff, 0, 1);
+      switch (type) {
+        case VSpeedType.v1:
+          return 0.90 + (1.16 - 0.9) * dWeightCoeff;
+        case VSpeedType.vR:
+          return 0.99 + (1.215 - 0.99) * dWeightCoeff;
+        case VSpeedType.v2:
+          return 1.03 + (1.23 - 1.03) * dWeightCoeff;
+      }
+    }
+    static _getFlapsCoefficient(flaps) {
+      switch (flaps) {
+        case 5:
+          return 2 * 5;
+        case 10:
+          return 3 * 5;
+        case 15:
+          return 4 * 5;
+        case 17:
+          return 5 * 5;
+        case 18:
+          return 6 * 5;
+        case 20:
+          return 7 * 5;
+        default:
+          return Simplane.getFlapsHandleIndex() * 5;
+      }
+    }
+    static _getIndexFromTemp(temp) {
+      if (temp < -10) {
+        return 0;
+      }
+      if (temp < 0) {
+        return 1;
+      }
+      if (temp < 10) {
+        return 2;
+      }
+      if (temp < 20) {
+        return 3;
+      }
+      if (temp < 30) {
+        return 4;
+      }
+      if (temp < 40) {
+        return 5;
+      }
+      if (temp < 43) {
+        return 6;
+      }
+      if (temp < 45) {
+        return 7;
+      }
+      if (temp < 47) {
+        return 8;
+      }
+      if (temp < 49) {
+        return 9;
+      }
+      if (temp < 51) {
+        return 10;
+      }
+      if (temp < 53) {
+        return 11;
+      }
+      if (temp < 55) {
+        return 12;
+      }
+      if (temp < 57) {
+        return 13;
+      }
+      if (temp < 59) {
+        return 14;
+      }
+      if (temp < 61) {
+        return 15;
+      }
+      if (temp < 63) {
+        return 16;
+      }
+      if (temp < 65) {
+        return 17;
+      }
+      if (temp < 66) {
+        return 18;
+      }
+      return 19;
+    }
+  }
+  _defineProperty(SpeedManager, "_v1s", [[130, 156], [128, 154], [127, 151], [125, 149], [123, 147], [122, 145], [121, 143], [120, 143], [120, 143], [120, 142], [119, 142], [119, 142], [119, 142], [119, 141], [118, 141], [118, 141], [118, 140], [118, 140], [117, 140], [117, 140]]);
+  _defineProperty(SpeedManager, "_vRs", [[130, 158], [128, 156], [127, 154], [125, 152], [123, 150], [122, 148], [121, 147], [120, 146], [120, 146], [120, 145], [119, 145], [119, 144], [119, 144], [119, 143], [118, 143], [118, 142], [118, 142], [118, 141], [117, 141], [117, 140]]);
+  _defineProperty(SpeedManager, "_v2s", [[135, 163], [133, 160], [132, 158], [130, 157], [129, 155], [127, 153], [127, 151], [126, 150], [125, 150], [125, 149], [124, 149], [124, 148], [124, 148], [123, 147], [123, 146], [123, 146], [123, 145], [122, 145], [122, 144], [121, 144]]);
+
   class SpeedCalculator {
     constructor() {
       _defineProperty(this, "flapsFallback", void 0);
@@ -6361,8 +6680,8 @@
     Init() {
       super.Init();
       this.dataManager = new FMCDataManager(this);
-      this._speedRepository = new SpeedRepository.SpeedRepository();
-      this._speedManager = new SpeedManager.SpeedManager(this._speedRepository, new SpeedCalculator());
+      this._speedRepository = new SpeedRepository();
+      this._speedManager = new SpeedManager(this._speedRepository, new SpeedCalculator());
       this.tempCurve = new Avionics.Curve();
       this.tempCurve.interpolationFunction = Avionics.CurveTool.NumberInterpolation;
       this.tempCurve.add(-10 * 3.28084, 21.50);

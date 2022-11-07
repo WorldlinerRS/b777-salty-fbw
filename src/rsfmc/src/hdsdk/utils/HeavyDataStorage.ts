@@ -4,7 +4,7 @@ export class HeavyDataStorage {
 	 * @type {string}
 	 * @private
 	 */
-	private static storagePrefix: string = 'HEAVY_B78XH_';
+	private static storagePrefix: string = 'B77RS_';
 
 	/**
 	 * Loads data from data storage

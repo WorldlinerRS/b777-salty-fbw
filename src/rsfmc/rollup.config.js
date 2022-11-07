@@ -39,7 +39,7 @@ const root = join(__dirname, '..', '..');
 
 process.chdir(src);
 
-module.exports = {
+module.exports = [{
     input: join(__dirname, 'src/index.ts'),
     plugins: [
         copy({
@@ -72,6 +72,35 @@ module.exports = {
     output: {
         file: join(root, 'rs-captainsim-aircraft-m777-base/html_ui/JS/fmc/fmc.js'),
         format: 'umd',
-        name: 'Fmgc',
+        name: 'fmc',
     },
-};
+},
+{
+    input: join(__dirname, 'src/hdsdk/index.ts'),
+    plugins: [
+        nodeResolve({ extensions }),
+        commonjs(),
+        babel({
+            presets: ['@babel/preset-typescript', ['@babel/preset-env', { targets: { browsers: ['safari 11'] } }]],
+            plugins: [
+                '@babel/plugin-proposal-class-properties',
+            ],
+            extensions,
+        }),
+        typescriptPaths({
+            tsConfigPath: join(src, 'tsconfig.json'),
+            preserveExtensions: true,
+        }),
+        replace({
+            'DEBUG': 'false',
+            'process.env.NODE_ENV': '"production"',
+            'preventAssignment': true,
+        }),
+    ],
+    output: {
+        file: join(root, 'rs-captainsim-aircraft-m777-base/html_ui/JS/hdsdk/hdsdk.js'),
+		format: 'umd',
+		extend: true,
+		name: 'window'
+    },
+}];

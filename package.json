@@ -11,7 +11,8 @@
     "build:ace": "node --max-old-space-size=8192 node_modules/rollup/dist/bin/rollup -wc ./src/instruments/buildSrc/aceBuild.mjs",
     "build:aims": "rollup -c src/aims/rollup.config.js",
     "build:behavior": "cd src/behavior && node ./build.js",
-    "build:fmc": "rollup -c src/rsfmc/rollup.config.js"
+    "build:fmc": "rollup -c src/rsfmc/rollup.config.js",
+    "build:package": "npm run build:aims && npm run build:behavior && npm run build:fmc && node scripts/build_release.js"
   },
   "lint-staged": {
     "*.{js,mjs,jsx}": "eslint --cache --fix",
@@ -52,6 +53,7 @@
     "@typescript-eslint/parser": "^5.40.0",
     "dotenv": "^16.0.3",
     "eslint": "^8.25.0",
+    "fs-extra": "^10.1.0",
     "jsdom": "^20.0.1",
     "msfssdk": "file:msfs-avionics-mirror/src/sdk/build",
     "postcss-color-functional-notation": "^4.2.4",
