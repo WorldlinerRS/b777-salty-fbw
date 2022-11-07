@@ -29,11 +29,11 @@ let HeavyEventDispatcher;
 	 */
 	let target;
 	(function (target) {
-		target[target['MFD_1'] = 0] = 'H:AS01B_MFD_1_';
-		target[target['MFD_2'] = 1] = 'H:AS01B_MFD_2_';
-		target[target['FMC_1'] = 2] = 'H:AS01B_FMC_1_';
-		target[target['FMC_2'] = 3] = 'H:AS01B_FMC_2_';
-		target[target['PFD'] = 4] = 'H:AS01B_PFD_';
+		target[target['MFD_1'] = 0] = 'H:B777_MFD_1_';
+		target[target['MFD_2'] = 1] = 'H:B777_MFD_2_';
+		target[target['FMC_1'] = 2] = 'H:B777_FMC_1_';
+		target[target['FMC_2'] = 3] = 'H:B777_FMC_2_';
+		target[target['PFD'] = 4] = 'H:B777_PFD_';
 		target[target['GLOBAL'] = 100] = '';
 	})(target || (target = {}));
 

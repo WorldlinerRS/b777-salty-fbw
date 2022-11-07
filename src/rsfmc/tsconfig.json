@@ -1,10 +1,18 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "moduleResolution": "node",
-    "target": "ESNext",
+    "target": "ES2017",
+    "module": "ES2015",
+    "lib": [
+      "es2015",
+      "es2016",
+      "es2017",
+      "ES2018",
+      "dom"
+    ],
     "noEmit": true,
-    "typeRoots": ["../../typings", "../types"]
+    "typeRoots": ["../../typings", "./types/**"]
   },
   "include": [
     "src/**/*",

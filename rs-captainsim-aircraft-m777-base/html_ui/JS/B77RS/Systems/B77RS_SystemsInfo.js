@@ -1,6 +1,6 @@
 class B77RS_SystemsInfo {
 	static get SYSTEM() {
-		return {'APU': 'B77RS_APU', 'IRS': 'B77RS_IRS'};
+		return {'APU': 'B77RS_APU', 'ADIRU': 'B77RS_ADIRU'};
 	}
 
 	constructor() {

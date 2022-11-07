@@ -26,16 +26,12 @@ class B77RS_Initializer {
 			// Cold & Dark config
 			[
 				{type: 'L', variable: 'B77RS_THRUST_ASSUMED_TEMPERATURE', value: -1000},
-				{type: 'L', variable: 'B77RS_IRS_L_STATE', value: 0},
-				{type: 'L', variable: 'B77RS_IRS_R_STATE', value: 0},
-				{type: 'L', variable: 'B77RS_IRS_L_SWITCH_STATE', value: 0},
-				{type: 'L', variable: 'B77RS_IRS_R_SWITCH_STATE', value: 0},
-				{type: 'L', variable: 'B77RS_IRS_L_INIT_ALIGN_TIME', value: -1},
-				{type: 'L', variable: 'B77RS_IRS_R_INIT_ALIGN_TIME', value: -1},
-				{type: 'L', variable: 'B77RS_IRS_L_TIME_FOR_ALIGN', value: -1},
-				{type: 'L', variable: 'B77RS_IRS_R_TIME_FOR_ALIGN', value: -1},
-				{type: 'L', variable: 'B77RS_IS_IRS_POSITION_SET', value: 0},
-				{type: 'L', variable: 'B77RS_IS_IRS_INITED', value: 0},
+				{type: 'L', variable: 'B77RS_ADIRU_STATE', value: 0},
+				{type: 'L', variable: 'B77RS_ADIRU_SWITCH_STATE', value: 0},
+				{type: 'L', variable: 'B77RS_ADIRU_INIT_ALIGN_TIME', value: -1},
+				{type: 'L', variable: 'B77RS_ADIRU_TIME_FOR_ALIGN', value: -1},
+				{type: 'L', variable: 'B77RS_IS_ADIRU_POSITION_SET', value: 0},
+				{type: 'L', variable: 'B77RS_IS_ADIRU_INITED', value: 0},
 				{type: 'L', variable: 'B77RS_HYDRAULIC_ELEC_L_SWITCH_STATE', value: 1}, // should be 0 for Cold & Dark
 				{type: 'L', variable: 'B77RS_HYDRAULIC_ELEC_C1_SWITCH_STATE', value: 1}, // should be 0 for Cold & Dark
 				{type: 'L', variable: 'B77RS_HYDRAULIC_ELEC_C2_SWITCH_STATE', value: 1}, // should be 0 for Cold & Dark
@@ -98,16 +94,12 @@ class B77RS_Initializer {
 			// normal config
 			[
 				{type: 'L', variable: 'B77RS_THRUST_ASSUMED_TEMPERATURE', value: -1000},
-				{type: 'L', variable: 'B77RS_IRS_L_STATE', value: 2},
-				{type: 'L', variable: 'B77RS_IRS_R_STATE', value: 2},
-				{type: 'L', variable: 'B77RS_IRS_L_SWITCH_STATE', value: 1},
-				{type: 'L', variable: 'B77RS_IRS_R_SWITCH_STATE', value: 1},
-				{type: 'L', variable: 'B77RS_IRS_L_INIT_ALIGN_TIME', value: 10001},
-				{type: 'L', variable: 'B77RS_IRS_R_INIT_ALIGN_TIME', value: 10001},
-				{type: 'L', variable: 'B77RS_IRS_L_TIME_FOR_ALIGN', value: 0},
-				{type: 'L', variable: 'B77RS_IRS_R_TIME_FOR_ALIGN', value: 0},
-				{type: 'L', variable: 'B77RS_IS_IRS_POSITION_SET', value: 1},
-				{type: 'L', variable: 'B77RS_IS_IRS_INITED', value: 100001},
+				{type: 'L', variable: 'B77RS_ADIRU_STATE', value: 2},
+				{type: 'L', variable: 'B77RS_ADIRU_SWITCH_STATE', value: 1},
+				{type: 'L', variable: 'B77RS_ADIRU_INIT_ALIGN_TIME', value: 10001},
+				{type: 'L', variable: 'B77RS_ADIRU_TIME_FOR_ALIGN', value: 0},
+				{type: 'L', variable: 'B77RS_IS_ADIRU_POSITION_SET', value: 1},
+				{type: 'L', variable: 'B77RS_IS_ADIRU_INITED', value: 100001},
 				{type: 'L', variable: 'B77RS_HYDRAULIC_ELEC_L_SWITCH_STATE', value: 1},
 				{type: 'L', variable: 'B77RS_HYDRAULIC_ELEC_C1_SWITCH_STATE', value: 1},
 				{type: 'L', variable: 'B77RS_HYDRAULIC_ELEC_C2_SWITCH_STATE', value: 1},

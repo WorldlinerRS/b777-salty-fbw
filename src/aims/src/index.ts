@@ -14,11 +14,11 @@ import { initComponents, updateComponents, recallMessageById } from './component
 import { WaypointBuilder } from './flightplanning/WaypointBuilder';
 import { Navigation } from './navigation/Navigation';
 
-function initFmgcLoop(baseInstrument: BaseInstrument, flightPlanManager: FlightPlanManager): void {
+function initAimsLoop(baseInstrument: BaseInstrument, flightPlanManager: FlightPlanManager): void {
     initComponents(baseInstrument, flightPlanManager);
 }
 
-function updateFmgcLoop(deltaTime: number): void {
+function updateAimsLoop(deltaTime: number): void {
     updateComponents(deltaTime);
 }
 
@@ -30,8 +30,8 @@ export {
     GuidanceManager,
     GuidanceController,
     NavRadioManager,
-    initFmgcLoop,
-    updateFmgcLoop,
+    initAimsLoop,
+    updateAimsLoop,
     recallMessageById,
     EfisSymbols,
     DescentBuilder,

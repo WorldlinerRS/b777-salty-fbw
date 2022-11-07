@@ -51,7 +51,7 @@ module.exports = [
                     },
                 ],
             }),
-            nodeResolve({ extensions }),
+            nodeResolve({ extensions, browser: true}),
             commonjs(),
             babel({
                 presets: ['@babel/preset-typescript', ['@babel/preset-env', { targets: { browsers: ['safari 11'] } }]],
@@ -71,79 +71,7 @@ module.exports = [
             }),
         ],
         output: {
-            file: join(root, 'rs-captainsim-aircraft-m777-base/html_ui/JS/fmc/fmc-200er.js'),
-            format: 'umd',
-            name: 'fmc',
-        },
-    },
-    {
-        input: join(__dirname, 'src/index-200f.ts'),
-        plugins: [
-            copy({
-                targets: [
-                    {
-                        src: 'fmc/src/utils/LzUtf8.js',
-                        dest: '../rs-captainsim-aircraft-m777-base/html_ui/JS/fmc/',
-                    },
-                ],
-            }),
-            nodeResolve({ extensions }),
-            commonjs(),
-            babel({
-                presets: ['@babel/preset-typescript', ['@babel/preset-env', { targets: { browsers: ['safari 11'] } }]],
-                plugins: [
-                    '@babel/plugin-proposal-class-properties',
-                ],
-                extensions,
-            }),
-            typescriptPaths({
-                tsConfigPath: join(src, 'tsconfig.json'),
-                preserveExtensions: true,
-            }),
-            replace({
-                'DEBUG': 'false',
-                'process.env.NODE_ENV': '"production"',
-                'preventAssignment': true,
-            }),
-        ],
-        output: {
-            file: join(root, 'rs-captainsim-aircraft-m777-base/html_ui/JS/fmc/fmc-200f.js'),
-            format: 'umd',
-            name: 'fmc',
-        },
-    },
-    {
-        input: join(__dirname, 'src/index-300er.ts'),
-        plugins: [
-            copy({
-                targets: [
-                    {
-                        src: 'fmc/src/utils/LzUtf8.js',
-                        dest: '../rs-captainsim-aircraft-m777-base/html_ui/JS/fmc/',
-                    },
-                ],
-            }),
-            nodeResolve({ extensions }),
-            commonjs(),
-            babel({
-                presets: ['@babel/preset-typescript', ['@babel/preset-env', { targets: { browsers: ['safari 11'] } }]],
-                plugins: [
-                    '@babel/plugin-proposal-class-properties',
-                ],
-                extensions,
-            }),
-            typescriptPaths({
-                tsConfigPath: join(src, 'tsconfig.json'),
-                preserveExtensions: true,
-            }),
-            replace({
-                'DEBUG': 'false',
-                'process.env.NODE_ENV': '"production"',
-                'preventAssignment': true,
-            }),
-        ],
-        output: {
-            file: join(root, 'rs-captainsim-aircraft-m777-base/html_ui/JS/fmc/fmc-300er.js'),
+            file: join(root, 'rs-captainsim-aircraft-m777-base/html_ui/Pages/VCockpit/Instruments/Airliners/B777-200ER/FMC/fmc.js'),
             format: 'umd',
             name: 'fmc',
         },

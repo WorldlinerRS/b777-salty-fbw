@@ -23,7 +23,7 @@
 class B77RS_Systems {
 
 	static get SYSTEM() {
-		return {'APU': 'B77RS_APU', 'IRS': 'B77RS_IRS'};
+		return {'APU': 'B77RS_APU', 'ADIRU': 'B77RS_ADIRU'};
 	}
 
 	constructor() {
@@ -35,7 +35,7 @@ class B77RS_Systems {
 	init() {
 		this.initializer.init();
 		this.systems[B77RS_Systems.SYSTEM.APU] = {'instance': new B77RS_APU(), delay: 0};
-		this.systems[B77RS_Systems.SYSTEM.IRS] = {'instance': new B77RS_IRS(), delay: 500};
+		this.systems[B77RS_Systems.SYSTEM.ADIRU] = {'instance': new B77RS_ADIRU(), delay: 500};
 	}
 
 	update(_deltaTime) {

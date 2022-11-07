@@ -1,6 +1,6 @@
-Include.addScript('/B77RS/DataHolders/FMC/FMCDataHolder.js');
-Include.addScript('/B77RS/DataHolders/MFD/MFDDataHolder.js');
-Include.addScript('/B77RS/DataHolders/PFD/PFDDataHolder.js');
+Include.addScript('/JS/B77RS/DataHolders/FMC/FMCDataHolder.js');
+Include.addScript('/JS/B77RS/DataHolders/MFD/MFDDataHolder.js');
+Include.addScript('/JS/B77RS/DataHolders/PFD/PFDDataHolder.js');
 
 /**
  * This class should not be used. Use FMCDataHolder/MFDDataHolder/PFDDataHolder directly

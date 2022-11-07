@@ -13,12 +13,12 @@ B77RS_LocalVariables.SIM_RATE_MANAGER = {
 };
 
 B77RS_LocalVariables.ADIRU = {
-	STATE: 'L:' + B77RS_LocalVariables.VERSION + '_IRS_L_STATE',
-	SWITCH_STATE: 'L:' + B77RS_LocalVariables.VERSION + '_IRS_L_SWITCH_STATE',
-	INIT_TIME: 'L:' + B77RS_LocalVariables.VERSION + '_IRS_L_INIT_TIME',
-	TIME_FOR_ALIGN: 'L:' + B77RS_LocalVariables.VERSION + '_IRS_L_TIME_FOR_ALIGN',
-	IS_INITED: 'L:' + B77RS_LocalVariables.VERSION + '_IRS_IS_INITED',
-	POSITION_SET: 'L:' + B77RS_LocalVariables.VERSION + '_IRS_POSITION_SET'
+	STATE: 'L:' + B77RS_LocalVariables.VERSION + '_ADIRU_STATE',
+	SWITCH_STATE: 'L:' + B77RS_LocalVariables.VERSION + '_ADIRU_SWITCH_STATE',
+	INIT_TIME: 'L:' + B77RS_LocalVariables.VERSION + '_ADIRU_INIT_TIME',
+	TIME_FOR_ALIGN: 'L:' + B77RS_LocalVariables.VERSION + '_ADIRU_TIME_FOR_ALIGN',
+	IS_INITED: 'L:' + B77RS_LocalVariables.VERSION + '_ADIRU_IS_INITED',
+	POSITION_SET: 'L:' + B77RS_LocalVariables.VERSION + '_ADIRU_POSITION_SET'
 };
 
 B77RS_LocalVariables.APU = {
