@@ -14,8 +14,8 @@ import {
     smallCircleGreatCircleIntersection,
     placeBearingIntersection,
 } from 'msfs-geo';
-import { AFLeg } from '@fmgc/guidance/lnav/legs/AF';
-import { TFLeg } from '@fmgc/guidance/lnav/legs/TF';
+import { AFLeg } from '@aims/guidance/lnav/legs/AF';
+import { TFLeg } from '@aims/guidance/lnav/legs/TF';
 
 const sin = (input: Degrees) => Math.sin(input * (Math.PI / 180));
 
@@ -143,6 +143,6 @@ export class Geo {
     }
 
     static doublePlaceBearingIntercept(pointA: Coordinates, pointB: Coordinates, bearingA: DegreesTrue, bearingB: DegreesTrue): Coordinates {
-        return A32NX_Util.greatCircleIntersection(pointA, bearingA, pointB, bearingB);
+        return B77RS_Util.greatCircleIntersection(pointA, bearingA, pointB, bearingB);
     }
 }

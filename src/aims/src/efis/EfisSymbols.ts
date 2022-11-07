@@ -3,17 +3,17 @@
 //
 // SPDX-License-Identifier: GPL-3.0
 
-import { FlightPlanManager, WaypointConstraintType } from '@fmgc/flightplanning/FlightPlanManager';
+import { FlightPlanManager, WaypointConstraintType } from '@aims/flightplanning/FlightPlanManager';
 import { EfisOption, Mode, NdSymbol, NdSymbolTypeFlags, RangeSetting, rangeSettings } from '@shared/NavigationDisplay';
-import { GuidanceManager } from '@fmgc/guidance/GuidanceManager';
-import { Coordinates } from '@fmgc/flightplanning/data/geo';
-import { Geometry } from '@fmgc/guidance/Geometry';
-import { GuidanceController } from '@fmgc/guidance/GuidanceController';
-import { PathVector, PathVectorType } from '@fmgc/guidance/lnav/PathVector';
-import { SegmentType } from '@fmgc/wtsdk';
+import { GuidanceManager } from '@aims/guidance/GuidanceManager';
+import { Coordinates } from '@aims/flightplanning/data/geo';
+import { Geometry } from '@aims/guidance/Geometry';
+import { GuidanceController } from '@aims/guidance/GuidanceController';
+import { PathVector, PathVectorType } from '@aims/guidance/lnav/PathVector';
+import { SegmentType } from '@aims/wtsdk';
 import { distanceTo } from 'msfs-geo';
 import { FlowEventSync } from '@shared/FlowEventSync';
-import { LnavConfig } from '@fmgc/guidance/LnavConfig';
+import { LnavConfig } from '@aims/guidance/LnavConfig';
 import { LegType, RunwaySurface, TurnDirection, VorType } from '../types/fstypes/FSEnums';
 import { NearbyFacilities } from './NearbyFacilities';
 

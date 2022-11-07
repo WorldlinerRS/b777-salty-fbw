@@ -1,5 +1,5 @@
-import { FlightLevel } from '@fmgc/guidance/vnav/verticalFlightPlan/VerticalFlightPlan';
-import { FlightPlanManager } from '@fmgc/wtsdk';
+import { FlightLevel } from '@aims/guidance/vnav/verticalFlightPlan/VerticalFlightPlan';
+import { FlightPlanManager } from '@aims/wtsdk';
 import { FmgcComponent } from './FmgcComponent';
 
 export class EfisLabels implements FmgcComponent {

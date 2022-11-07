@@ -22,7 +22,7 @@ declare global {
     }
 
     // eslint-disable-next-line camelcase
-    namespace A32NX_Util {
+    namespace B77RS_Util {
         function createDeltaTimeCalculator(startTime: number): () => number
 
         function createFrameCounter(interval: number): number

@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Coordinates } from '@fmgc/flightplanning/data/geo';
+import { Coordinates } from '@aims/flightplanning/data/geo';
 import { WorldMagneticModel } from './WorldMagneticModel';
 
 /** A class for geographical mathematics. */

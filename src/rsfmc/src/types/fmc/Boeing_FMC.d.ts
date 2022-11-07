@@ -48,7 +48,7 @@ export declare class Boeing_FMC extends BaseFMC {
     onExecPage: () => void;
     onExecDefault: () => void;
     private _pageRefreshTimer;
-    protected _navModeSelector: B78XHNavModeSelector;
+    protected _navModeSelector: B77RSNavModeSelector;
     _speedDirector: SpeedDirector;
     _thrustTakeOffTemp: number;
     thrustReductionHeight: number;

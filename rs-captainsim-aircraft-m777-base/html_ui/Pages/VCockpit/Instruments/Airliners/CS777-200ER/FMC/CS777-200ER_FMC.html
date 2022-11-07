@@ -6,47 +6,54 @@
     </div>
 </script>
 
-<script type="text/html" import-script="/JS/SimPlane.js"></script>
+<script type="text/html" import-script="/JS/SimPlane.js" import-async="false"></script>
+<script type="text/html" import-script="/JS/B77RS_Util.js"></script>
 <script type="text/html" import-script="/JS/dataStorage.js"></script>
 
 <!-- WT imports-->
-<script type="text/html" import-script="/JS/WT/WT_SimPlaneMod.js"></script> <!-- WT -->
-<script type="text/html" import-script="/JS/WT/DataStore.js"></script> <!-- WT -->
-<script type="text/html" import-script="/JS/WT/WTUtils.js"></script> <!-- WT -->
-<script type="text/html" import-script="/JS/WT/WT_ConvertUnit.js"></script> <!-- WT -->
-<script type="text/html" import-script="/JS/WT/WT_GCMath.js"></script> <!-- WT -->
-<script type="text/html" import-script="/JS/WT/Waypoint.js"></script> <!-- WT -->
-<script type="text/html" import-script="/JS/WT/WaypointLoader.js"></script> <!-- WT -->
-<script type="text/html" import-script="/JS/fpm/LzUtf8.js"></script> <!-- WT -->
-<script type="text/html" import-script="/JS/fpm/wtsdk.js"></script> <!-- WT -->
+<script type="text/html" import-script="/JS/WT/WT_SimPlaneMod.js"></script>
+<script type="text/html" import-script="/JS/WT/DataStore.js"></script>
+<script type="text/html" import-script="/JS/WT/WT_GCMath.js"></script>
+<script type="text/html" import-script="/JS/fpm/LzUtf8.js"></script>
+<script type="text/html" import-script="/JS/fpm/wtsdk.js"></script>
 
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Utils/RadioNav.js"></script>
-
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/Runway.js"></script>
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/Approach.js"></script>
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/FlightPlan.js"></script>
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/GeoCalc.js"></script>
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/SearchField.js"></script>
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.js"></script>
-<!-- API -->
-<script type="text/html" import-script="/Pages/Api/SimbriefApi.js"></script>
-<script type="text/html" import-script="/Pages/Api/NXApi.js"></script>
-<!-- SALTY -->
-
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/Airliners/Shared/RobSim_BaseAirliners.js"></script>
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/Airliners/Shared/FMC/FMCDataManager.js"></script>
-
-
-<!-- WT -->
-<script type="text/html" import-script="/JS/WT/Autopilot/NavToNavTransfer.js"></script>
-<script type="text/html" import-script="/JS/WT/Autopilot/B777RSNavModeSelector.js"></script>
-<script type="text/html" import-script="/JS/WT/Autopilot/WT_BaseVnav.js"></script>
 <script type="text/html" import-script="/JS/WT/Autopilot/AutopilotMath.js"></script>
 <script type="text/html" import-script="/JS/WT/Autopilot/HoldsDirector.js"></script>
 <script type="text/html" import-script="/JS/WT/Autopilot/LocDirector.js"></script>
 <script type="text/html" import-script="/JS/WT/Autopilot/LNavDirector.js"></script>
+<script type="text/html" import-script="/JS/WT/Autopilot/WT_BaseVnav.js"></script>
 <script type="text/html" import-script="/JS/WT/Autopilot/WT_VnavAutopilot.js"></script>
+<script type="text/html" import-script="/JS/WT/CJ4_FMC_PilotWaypoint.js"></script>
+<!-- WT imports-->
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Utils/RadioNav.js"></script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/Runway.js"></script>
+<script type="text/html" import-script="/RPages/VCockpit/Instruments/Shared/FlightElements/Waypoint.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/Approach.js"></script>
+<script type="text/html" import-script="/RPages/VCockpit/Instruments/Shared/FlightElements/WaypointLoader.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/FlightElements/GeoCalc.js"></script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/SearchField.js"></script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.js"></script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Airliners/Shared/RobSim_BaseAirliners.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Airliners/Shared/FMC/FMCDataManager.js"></script>
+
+<!-- AIMS-->
+<script type="text/html" import-script="/JS/aims/aims.js"></script>
+
+<!-- B77RS files -->
+<script type="text/html" import-script="/JS/B77RS/Autopilot/B777RSNavModeSelector.js"></script>
+<script type="text/html" import-script="/JS/B77RS/DataHolders/FMC/FMCMessagesHolder.js"></script>
+<script type="text/html" import-script="/JS/B77RS/Managers/FMCMessagesManager.js"></script>
+
+<script type="text/html" import-script="/JS/B77RS/Enums/B77RS_LocalVariables.js" ></script>
+<script type="text/html" import-script="/JS/B77RS/Utils/HeavyEventDispatcher.js" ></script>
+<script type="text/html" import-script="/JS/B77RS/Utils/UpdateDelayer.js"></script>
+<!-- HD SDK -->
+<script type="text/html" import-script="/JS/hdsdk/hdsdk.js"></script>
 
 <!-- FMC -->
-<!-- FMC B777 Profile -->
-<script type="text/html" import-script="/JS/fmc/fmc.js"></script>
+<script type="text/html" import-script="/JS/fmc/fmc-200er.js"></script>

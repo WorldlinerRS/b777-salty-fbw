@@ -223,7 +223,7 @@ export class PILeg extends Leg {
         }
 
         this.intercept.itp = this.turn2.ftp;
-        this.intercept.ftp = A32NX_Util.greatCircleIntersection(
+        this.intercept.ftp = B77RS_Util.greatCircleIntersection(
             this.turn2.ftp,
             (this.outbound.course + 180) % 360,
             tp,

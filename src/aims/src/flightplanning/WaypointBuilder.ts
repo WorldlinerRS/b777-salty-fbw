@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { LegType, TurnDirection } from '@fmgc/types/fstypes/FSEnums';
+import { LegType, TurnDirection } from '@aims/types/fstypes/FSEnums';
 import { Minutes } from 'msfs-geo';
 import { FlightPlanManager } from './FlightPlanManager';
 import { GeoMath } from './GeoMath';

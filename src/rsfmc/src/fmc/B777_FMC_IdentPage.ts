@@ -22,6 +22,7 @@ export class B777_FMC_IdentPage {
 
 		fmc._renderer.renderTitle('IDENT');
 
+		// B777-200ER IdentPage
 		fmc._renderer.render([
 			['MODEL', 'ENG RATING'],
 			['777-200.1', 'GE90-90B'],

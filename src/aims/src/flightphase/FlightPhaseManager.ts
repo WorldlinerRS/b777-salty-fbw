@@ -1,4 +1,4 @@
-import { Phase, PreFlightPhase, TakeOffPhase, ClimbPhase, CruisePhase, DescentPhase, ApproachPhase, GoAroundPhase, DonePhase } from '@fmgc/flightphase/Phase';
+import { Phase, PreFlightPhase, TakeOffPhase, ClimbPhase, CruisePhase, DescentPhase, ApproachPhase, GoAroundPhase, DonePhase } from '@aims/flightphase/Phase';
 import { VerticalMode } from '@shared/autopilot';
 import { FmgcFlightPhase, isAnEngineOn, isOnGround, isReady, isSlewActive } from '@shared/flightphase';
 import { ConfirmationNode } from '@shared/logic';

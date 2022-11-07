@@ -80,7 +80,7 @@ export declare class B777_FMC extends Boeing_FMC {
         waypoint: any;
         targetType: any;
     };
-    getFlapProtectionMaxSpeed(handleIndex: any): 360 | 255 | 235 | 225 | 215 | 210 | 205 | 185 | 175;
+    getFlapProtectionMaxSpeed(handleIndex: any): 360 | 255 | 235 | 215 | 200 | 190 | 180;
     getEconClbManagedSpeed(): number;
     getEconCrzManagedSpeed(): number;
     /**

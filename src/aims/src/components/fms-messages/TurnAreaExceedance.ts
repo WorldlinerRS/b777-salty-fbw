@@ -1,6 +1,6 @@
-import { GuidanceController } from '@fmgc/guidance/GuidanceController';
-import { PILeg } from '@fmgc/guidance/lnav/legs/PI';
-import { Navigation } from '@fmgc/navigation/Navigation';
+import { GuidanceController } from '@aims/guidance/GuidanceController';
+import { PILeg } from '@aims/guidance/lnav/legs/PI';
+import { Navigation } from '@aims/navigation/Navigation';
 import { FMMessage, FMMessageTypes } from '@shared/FmMessages';
 import { Trigger } from '@shared/logic';
 import { FMMessageSelector, FMMessageUpdate } from './FmsMessages';

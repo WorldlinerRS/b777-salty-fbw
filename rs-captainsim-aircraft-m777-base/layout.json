@@ -13,17 +13,17 @@
     {
       "path": "ModelBehaviorDefs/B77RS/generated/B77RS_Exterior_Engines.xml",
       "size": 9069,
-      "date": 133123023592372260
+      "date": 133123254771626960
     },
     {
       "path": "ModelBehaviorDefs/B77RS/generated/B77RS_Interior_CDU.xml",
       "size": 5019,
-      "date": 133123023592557680
+      "date": 133123254771858940
     },
     {
       "path": "ModelBehaviorDefs/B77RS/generated/B77RS_Interior_Glareshield.xml",
       "size": 74967,
-      "date": 133123023593431220
+      "date": 133123254773068020
     },
     {
       "path": "SimObjects/Airplanes/CS_B777-200ER_GE90B/Climb.flt",
@@ -108,7 +108,7 @@
     {
       "path": "SimObjects/Airplanes/CS_B777-200ER_GE90B/panel/panel.cfg",
       "size": 1887,
-      "date": 133123004694486140
+      "date": 133123076423030910
     },
     {
       "path": "SimObjects/Airplanes/CS_B777-200ER_GE90B/panel/panel.xml",
@@ -381,19 +381,244 @@
       "date": 132955487140000000
     },
     {
+      "path": "html_ui/JS/B77RS/Autopilot/B777RSNavModeSelector.js",
+      "size": 72810,
+      "date": 133054534519151000
+    },
+    {
+      "path": "html_ui/JS/B77RS/DataHolders/FMC/FMCDataHolder.js",
+      "size": 246,
+      "date": 132883756707550450
+    },
+    {
+      "path": "html_ui/JS/B77RS/DataHolders/FMC/FMCMessagesHolder.js",
+      "size": 1551,
+      "date": 132883756707550450
+    },
+    {
+      "path": "html_ui/JS/B77RS/DataHolders/FMC/PreFlightDataHolder.js",
+      "size": 5280,
+      "date": 132883756707555440
+    },
+    {
+      "path": "html_ui/JS/B77RS/DataHolders/HeavyDataHolder.js",
+      "size": 715,
+      "date": 133123031749649000
+    },
+    {
+      "path": "html_ui/JS/B77RS/DataHolders/MFD/MFDDataHolder.js",
+      "size": 26,
+      "date": 132883756707560450
+    },
+    {
+      "path": "html_ui/JS/B77RS/DataHolders/PFD/PFDDataHolder.js",
+      "size": 26,
+      "date": 132883756707560450
+    },
+    {
+      "path": "html_ui/JS/B77RS/Directors/SpeedDirector.js",
+      "size": 18706,
+      "date": 133123034964392670
+    },
+    {
+      "path": "html_ui/JS/B77RS/Enums/B77RS_EICAS_Messages.js",
+      "size": 108237,
+      "date": 132883756707715460
+    },
+    {
+      "path": "html_ui/JS/B77RS/Enums/B77RS_LocalVariables.js",
+      "size": 3530,
+      "date": 133123253855359650
+    },
+    {
+      "path": "html_ui/JS/B77RS/Managers/FMCMessagesManager.js",
+      "size": 1061,
+      "date": 132883756707565440
+    },
+    {
+      "path": "html_ui/JS/B77RS/Systems/B77RS_APU.js",
+      "size": 2763,
+      "date": 133123035690152380
+    },
+    {
+      "path": "html_ui/JS/B77RS/Systems/B77RS_APUInfo.js",
+      "size": 766,
+      "date": 133123035745351330
+    },
+    {
+      "path": "html_ui/JS/B77RS/Systems/B77RS_IRS.js",
+      "size": 8533,
+      "date": 133123036826595620
+    },
+    {
+      "path": "html_ui/JS/B77RS/Systems/B77RS_Initializer.js",
+      "size": 5585,
+      "date": 133123036838347460
+    },
+    {
+      "path": "html_ui/JS/B77RS/Systems/B77RS_Systems.js",
+      "size": 2197,
+      "date": 133123037053724100
+    },
+    {
+      "path": "html_ui/JS/B77RS/Systems/B77RS_SystemsInfo.js",
+      "size": 489,
+      "date": 133123037373893310
+    },
+    {
+      "path": "html_ui/JS/B77RS/Utils/HeavyDataStorage.js",
+      "size": 1250,
+      "date": 133123066389922850
+    },
+    {
+      "path": "html_ui/JS/B77RS/Utils/HeavyEventDispatcher.js",
+      "size": 3612,
+      "date": 133123066549053310
+    },
+    {
+      "path": "html_ui/JS/B77RS/Utils/HeavyUpdateDelayer.js",
+      "size": 894,
+      "date": 132883756707720460
+    },
+    {
+      "path": "html_ui/JS/B77RS/Utils/HeavyUtils.js",
+      "size": 3512,
+      "date": 132883756707725460
+    },
+    {
+      "path": "html_ui/JS/B77RS/Utils/UpdateDelayer.js",
+      "size": 1484,
+      "date": 132883756707725460
+    },
+    {
+      "path": "html_ui/JS/B77RS/b77rs.json",
+      "size": 123,
+      "date": 133054536997592300
+    },
+    {
+      "path": "html_ui/JS/B77RS_Util.js",
+      "size": 13711,
+      "date": 133123238084756200
+    },
+    {
+      "path": "html_ui/JS/WT/Autopilot/AutopilotMath.js",
+      "size": 9992,
+      "date": 132955487140000000
+    },
+    {
+      "path": "html_ui/JS/WT/Autopilot/HoldsDirector.js",
+      "size": 23808,
+      "date": 132955487140000000
+    },
+    {
+      "path": "html_ui/JS/WT/Autopilot/LNavDirector.js",
+      "size": 28138,
+      "date": 133054600873961710
+    },
+    {
+      "path": "html_ui/JS/WT/Autopilot/LocDirector.js",
+      "size": 4562,
+      "date": 132955487140000000
+    },
+    {
+      "path": "html_ui/JS/WT/Autopilot/NavToNavTransfer.js",
+      "size": 4789,
+      "date": 132955487140000000
+    },
+    {
+      "path": "html_ui/JS/WT/Autopilot/WT_BaseVnav.js",
+      "size": 47308,
+      "date": 132955487140000000
+    },
+    {
+      "path": "html_ui/JS/WT/Autopilot/WT_VnavAutopilot.js",
+      "size": 70719,
+      "date": 132955487140000000
+    },
+    {
+      "path": "html_ui/JS/WT/CJ4_FMC_PilotWaypoint.js",
+      "size": 19997,
+      "date": 132955487140000000
+    },
+    {
+      "path": "html_ui/JS/WT/DataStore.js",
+      "size": 4219,
+      "date": 132955487140000000
+    },
+    {
+      "path": "html_ui/JS/WT/FileHandler.js",
+      "size": 4951,
+      "date": 132955487140000000
+    },
+    {
+      "path": "html_ui/JS/WT/WTUtils.js",
+      "size": 607,
+      "date": 132955487140000000
+    },
+    {
+      "path": "html_ui/JS/WT/WT_ConvertUnit.js",
+      "size": 2489,
+      "date": 132955487140000000
+    },
+    {
+      "path": "html_ui/JS/WT/WT_GCMath.js",
+      "size": 52924,
+      "date": 132955487140000000
+    },
+    {
+      "path": "html_ui/JS/WT/WT_SimPlaneMod.js",
+      "size": 690,
+      "date": 132955487140000000
+    },
+    {
+      "path": "html_ui/JS/WT/Waypoint.js",
+      "size": 34720,
+      "date": 132962027886885650
+    },
+    {
+      "path": "html_ui/JS/WT/WaypointLoader.js",
+      "size": 72896,
+      "date": 132955487140000000
+    },
+    {
       "path": "html_ui/JS/aims/LzUtf8.js",
       "size": 44131,
-      "date": 133123023461507710
+      "date": 133123254612351970
     },
     {
       "path": "html_ui/JS/aims/aims.js",
-      "size": 448107,
-      "date": 133123023462680880
+      "size": 1534234,
+      "date": 133123254615787650
     },
     {
-      "path": "html_ui/JS/fmc/fmc.js",
-      "size": 619326,
-      "date": 133123023885792770
+      "path": "html_ui/JS/fmc/fmc-200er.js",
+      "size": 619350,
+      "date": 133123255109671550
+    },
+    {
+      "path": "html_ui/JS/fmc/fmc-200f.js",
+      "size": 639895,
+      "date": 133123255177476030
+    },
+    {
+      "path": "html_ui/JS/fmc/fmc-300er.js",
+      "size": 640255,
+      "date": 133123255251462450
+    },
+    {
+      "path": "html_ui/JS/fpm/LzUtf8.js",
+      "size": 32045,
+      "date": 132955178128801580
+    },
+    {
+      "path": "html_ui/JS/fpm/wtsdk.js",
+      "size": 215773,
+      "date": 133054821537640460
+    },
+    {
+      "path": "html_ui/JS/hdsdk/hdsdk.js",
+      "size": 85682,
+      "date": 133123255293289400
     },
     {
       "path": "html_ui/Pages/Api/NXApi.js",
@@ -454,11 +679,6 @@
       "path": "html_ui/Pages/RobSim/WT/Autopilot/AutopilotMath.js",
       "size": 9992,
       "date": 132955487140000000
-    },
-    {
-      "path": "html_ui/Pages/RobSim/WT/Autopilot/B777RSNavModeSelector.js",
-      "size": 72810,
-      "date": 133054534519151000
     },
     {
       "path": "html_ui/Pages/RobSim/WT/Autopilot/HoldsDirector.js",
@@ -544,41 +764,6 @@
       "path": "html_ui/Pages/RobSim/fpm/wtsdk.js",
       "size": 215773,
       "date": 133054821537640460
-    },
-    {
-      "path": "html_ui/Pages/VCockpit/Instruments/77s/ND/template.html",
-      "size": 219207,
-      "date": 133054821288520460
-    },
-    {
-      "path": "html_ui/Pages/VCockpit/Instruments/77s/ND/template.js",
-      "size": 1691,
-      "date": 133054821288530500
-    },
-    {
-      "path": "html_ui/Pages/VCockpit/Instruments/77s/PFD/instrument.js",
-      "size": 337711,
-      "date": 133054821099435420
-    },
-    {
-      "path": "html_ui/Pages/VCockpit/Instruments/77s/PFD/pfd.css",
-      "size": 2154,
-      "date": 133054821099380400
-    },
-    {
-      "path": "html_ui/Pages/VCockpit/Instruments/77s/PFD/pfd.html",
-      "size": 239,
-      "date": 133054699317290930
-    },
-    {
-      "path": "html_ui/Pages/VCockpit/Instruments/77s/PFD/template.html",
-      "size": 362835,
-      "date": 133054821402825600
-    },
-    {
-      "path": "html_ui/Pages/VCockpit/Instruments/77s/PFD/template.js",
-      "size": 1698,
-      "date": 133054821402830400
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/Airliners/B777/ALT/B777_ALT.html",
@@ -1747,8 +1932,8 @@
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/Airliners/CS777-200ER/FMC/CS777-200ER_FMC.html",
-      "size": 3984,
-      "date": 133123015187404100
+      "size": 3454,
+      "date": 133123239444677890
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/Airliners/CS777-200ER/FMC/CS777-200ER_FMC_IdentPage.js",
@@ -1882,13 +2067,178 @@
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/Airliners/Shared/RobSim_BaseAirliners.js",
-      "size": 68744,
-      "date": 133023044930144660
+      "size": 68777,
+      "date": 133123060585953970
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/Shared/RobSim_NavSystem.js",
       "size": 127242,
       "date": 133054534520576000
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Airliners/Shared/BaseNDCompass.js",
+      "size": 30952,
+      "date": 132918540261019900
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Airliners/Shared/Boeing/Heavy_Boeing_FMC.js",
+      "size": 33452,
+      "date": 132883756707595440
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Airliners/Shared/MFD/NDCompass.js",
+      "size": 48972,
+      "date": 132883756707600450
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Airliners/Shared/MFD/NDInfo.js",
+      "size": 19552,
+      "date": 132883756707600450
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Airliners/Shared/PFD/AttitudeIndicator.js",
+      "size": 45542,
+      "date": 132883756707610450
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/FlightElements/Waypoint.js",
+      "size": 27883,
+      "date": 132942411854425650
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/FlightElements/WaypointLoader.js",
+      "size": 56142,
+      "date": 132883756707620430
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/MapInstrument.css",
+      "size": 2288,
+      "date": 132883756707620430
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/MapInstrument.html",
+      "size": 5823,
+      "date": 132942411854430640
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/MapInstrument.js",
+      "size": 62471,
+      "date": 132883756707635420
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgAirplaneElement.js",
+      "size": 15748,
+      "date": 132883756707640450
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgAltitudeInterceptElement.js",
+      "size": 5691,
+      "date": 132883756707640450
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgCityElement.js",
+      "size": 9113,
+      "date": 132883756707645440
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgCityManager.js",
+      "size": 11355,
+      "date": 132883756707645440
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgConstraintElement.js",
+      "size": 8633,
+      "date": 132883756707650430
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgFlightPlanElement.js",
+      "size": 11125,
+      "date": 132883756707655420
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgFuelRingElement.js",
+      "size": 12366,
+      "date": 132883756707655420
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgLabeledRingElement.js",
+      "size": 2502,
+      "date": 132883756707660460
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgMap.js",
+      "size": 18597,
+      "date": 132883756707665420
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgMapConfig.js",
+      "size": 9215,
+      "date": 132883756707665420
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgMapElement.js",
+      "size": 2502,
+      "date": 132883756707670450
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgMaskElement.js",
+      "size": 2355,
+      "date": 132883756707675490
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgNearestAirportElement.js",
+      "size": 1946,
+      "date": 132883756707675490
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgNearestIntersectionElement.js",
+      "size": 724,
+      "date": 132883756707680450
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgNearestNDBElement.js",
+      "size": 893,
+      "date": 132883756707685460
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgNearestVORElement.js",
+      "size": 1117,
+      "date": 132883756707685460
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgObstacleElement.js",
+      "size": 2786,
+      "date": 132883756707685460
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgRangeCompassElement.js",
+      "size": 18723,
+      "date": 132883756707690450
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgRangeRingElement.js",
+      "size": 7050,
+      "date": 132883756707695460
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgRoadNetworkElement.js",
+      "size": 19813,
+      "date": 132883756707695460
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgTextManager.js",
+      "size": 11371,
+      "date": 132883756707700430
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgTrackVectorElement.js",
+      "size": 5786,
+      "date": 132883756707700430
+    },
+    {
+      "path": "html_ui/RPages/VCockpit/Instruments/Shared/Map/Svg/SvgWaypointElement.js",
+      "size": 18899,
+      "date": 132883756707705420
     }
   ]
 }

@@ -90,7 +90,7 @@ export class FlightPlanManager {
 
     private _fixInfos: FixInfo[] = [];
 
-    private updateThrottler = new A32NX_Util.UpdateThrottler(2000);
+    private updateThrottler = new B77RS_Util.UpdateThrottler(2000);
 
     /**
      * Constructs an instance of the FlightPlanManager with the provided
@@ -102,7 +102,7 @@ export class FlightPlanManager {
 
         this._loadFlightPlans();
 
-        if (_parentInstrument.instrumentIdentifier === 'A320_Neo_CDU') {
+        if (_parentInstrument.instrumentIdentifier === 'B777_FMC') {
             this._isMaster = true;
             _parentInstrument.addEventListener('FlightStart', async () => {
                 const plan = new ManagedFlightPlan();

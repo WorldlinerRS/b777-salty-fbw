@@ -568,7 +568,7 @@ export class ManagedFlightPlan {
         }
 
         const magVar = Facilities.getMagVar(atWaypoint.infos.coordinates.lat, atWaypoint.infos.coordinates.long);
-        const trueCourse = A32NX_Util.magneticToTrue(desiredHold.inboundMagneticCourse, magVar);
+        const trueCourse = B77RS_Util.magneticToTrue(desiredHold.inboundMagneticCourse, magVar);
 
         if (atWaypoint.additionalData.legType === LegType.HA || atWaypoint.additionalData.legType === LegType.HF || atWaypoint.additionalData.legType === LegType.HM) {
             atWaypoint.additionalData.legType = LegType.HM;
@@ -1189,7 +1189,7 @@ export class ManagedFlightPlan {
                 if (approachIndex !== -1) {
                     const lastLeg = approach.finalLegs[approach.finalLegs.length - 1];
                     if (lastLeg.type === LegType.CF) {
-                        const magCourse = lastLeg.trueDegrees ? A32NX_Util.trueToMagnetic(lastLeg.course, Facilities.getMagVar(runway.beginningCoordinates.lat, runway.beginningCoordinates.long)) : lastLeg.course;
+                        const magCourse = lastLeg.trueDegrees ? B77RS_Util.trueToMagnetic(lastLeg.course, Facilities.getMagVar(runway.beginningCoordinates.lat, runway.beginningCoordinates.long)) : lastLeg.course;
                         this.destinationAirfield.additionalData.annotation = `C${magCourse.toFixed(0).padStart(3, '0')}°`;
                     } else {
                         this.destinationAirfield.additionalData.annotation = approachName;

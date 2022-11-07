@@ -239,13 +239,13 @@ export class LegsProcedure {
                   mappedLeg.additionalData.fixTypeFlags = currentLeg.fixTypeFlags;
                   mappedLeg.additionalData.distance = currentLeg.distanceMinutes ? undefined : currentLeg.distance / 1852;
                   mappedLeg.additionalData.distanceInMinutes = currentLeg.distanceMinutes ? currentLeg.distance : undefined;
-                  mappedLeg.additionalData.course = currentLeg.trueDegrees ? currentLeg.course : A32NX_Util.magneticToTrue(currentLeg.course, magCorrection);
+                  mappedLeg.additionalData.course = currentLeg.trueDegrees ? currentLeg.course : B77RS_Util.magneticToTrue(currentLeg.course, magCorrection);
                   mappedLeg.additionalData.recommendedIcao = currentLeg.originIcao.trim().length > 0 ? currentLeg.originIcao : undefined;
                   mappedLeg.additionalData.recommendedFrequency = recNavaid ? recNavaid.freqMHz : undefined;
                   mappedLeg.additionalData.recommendedLocation = recNavaid ? { lat: recNavaid.lat, long: recNavaid.lon } : undefined;
                   mappedLeg.additionalData.rho = currentLeg.rho / 1852;
                   mappedLeg.additionalData.theta = currentLeg.theta;
-                  mappedLeg.additionalData.thetaTrue = A32NX_Util.magneticToTrue(currentLeg.theta, magCorrection);
+                  mappedLeg.additionalData.thetaTrue = B77RS_Util.magneticToTrue(currentLeg.theta, magCorrection);
                   mappedLeg.additionalData.annotation = currentAnnotation;
               }
 
@@ -370,7 +370,7 @@ export class LegsProcedure {
   public mapBearingAndDistanceFromOrigin(leg: RawProcedureLeg): WayPoint {
     const origin = this._facilities.get(leg.fixIcao);
     const originIdent = origin.icao.substring(7, 12).trim();
-    const course = leg.trueDegrees ? leg.course : A32NX_Util.magneticToTrue(leg.course, Facilities.getMagVar(origin.lat, origin.lon));
+    const course = leg.trueDegrees ? leg.course : B77RS_Util.magneticToTrue(leg.course, Facilities.getMagVar(origin.lat, origin.lon));
     // this is the leg length for FC, and the DME distance for FD
     const refDistance = leg.distance / 1852;
 
@@ -431,7 +431,7 @@ export class LegsProcedure {
    */
   public mapHeadingToInterceptNextLeg(leg: RawProcedureLeg, prevLeg: WayPoint, nextLeg: RawProcedureLeg): WayPoint | null {
       const magVar = Facilities.getMagVar(prevLeg.infos.coordinates.lat, prevLeg.infos.coordinates.long);
-      const course = leg.trueDegrees ? leg.course : A32NX_Util.magneticToTrue(leg.course, magVar);
+      const course = leg.trueDegrees ? leg.course : B77RS_Util.magneticToTrue(leg.course, magVar);
 
       const coordinates = GeoMath.relativeBearingDistanceToCoords(course, 1, prevLeg.infos.coordinates);
       const waypoint = this.buildWaypoint(FixNamingScheme.courseToIntercept(course), coordinates, prevLeg.infos.magneticVariation);
@@ -460,7 +460,7 @@ export class LegsProcedure {
       const legDistance = Math.acos((Math.cos(beta) + Math.cos(alpha) * Math.cos(gamma)) / (Math.sin(alpha) * Math.sin(gamma)));
 
       const magVar = Facilities.getMagVar(prevLeg.infos.coordinates.lat, prevLeg.infos.coordinates.long);
-      const course = leg.trueDegrees ? leg.course : A32NX_Util.magneticToTrue(leg.course, magVar);
+      const course = leg.trueDegrees ? leg.course : B77RS_Util.magneticToTrue(leg.course, magVar);
 
       const coordinates = Avionics.Utils.bearingDistanceToCoordinates(
           course,
@@ -480,8 +480,8 @@ export class LegsProcedure {
    */
   public mapHeadingUntilAltitude(leg: RawProcedureLeg, prevLeg: WayPoint) {
       const magVar = Facilities.getMagVar(prevLeg.infos.coordinates.lat, prevLeg.infos.coordinates.long);
-      const course = leg.trueDegrees ? leg.course : A32NX_Util.magneticToTrue(leg.course, magVar);
-      const heading = leg.trueDegrees ? A32NX_Util.trueToMagnetic(leg.course, magVar) : leg.course;
+      const course = leg.trueDegrees ? leg.course : B77RS_Util.magneticToTrue(leg.course, magVar);
+      const heading = leg.trueDegrees ? B77RS_Util.trueToMagnetic(leg.course, magVar) : leg.course;
       const altitudeFeet = (leg.altitude1 * 3.2808399);
       const distanceInNM = altitudeFeet / 500.0;
 
@@ -501,8 +501,8 @@ export class LegsProcedure {
    */
   public mapVectors(leg: RawProcedureLeg, prevLeg: WayPoint) {
       const magVar = Facilities.getMagVar(prevLeg.infos.coordinates.lat, prevLeg.infos.coordinates.long);
-      const course = leg.trueDegrees ? leg.course : A32NX_Util.magneticToTrue(leg.course, magVar);
-      const heading = leg.trueDegrees ? A32NX_Util.trueToMagnetic(leg.course, magVar) : leg.course;
+      const course = leg.trueDegrees ? leg.course : B77RS_Util.magneticToTrue(leg.course, magVar);
+      const heading = leg.trueDegrees ? B77RS_Util.trueToMagnetic(leg.course, magVar) : leg.course;
       const coordinates = GeoMath.relativeBearingDistanceToCoords(course, 1, prevLeg.infos.coordinates);
 
       const waypoint = this.buildWaypoint(FixNamingScheme.vector(), coordinates);
@@ -554,7 +554,7 @@ export class LegsProcedure {
       const magVar = Facilities.getMagVar(facility.lat, facility.lon);
 
       (waypoint.additionalData.defaultHold as HoldData) = {
-          inboundMagneticCourse: leg.trueDegrees ? A32NX_Util.trueToMagnetic(leg.course, magVar) : leg.course,
+          inboundMagneticCourse: leg.trueDegrees ? B77RS_Util.trueToMagnetic(leg.course, magVar) : leg.course,
           turnDirection: leg.turnDirection,
           distance: leg.distanceMinutes ? undefined : leg.distance / 1852,
           time: leg.distanceMinutes ? leg.distance : undefined,
